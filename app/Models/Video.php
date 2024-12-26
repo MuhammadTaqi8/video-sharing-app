@@ -57,4 +57,9 @@ class Video extends Model
     {
         return $this->belongsToMany(Tag::class, 'VideoTags', 'VideoID', 'TagID');
     }
+
+    public function engagement()
+    {
+        return $this->hasOne(VideoEngagement::class, 'VideoID', 'VideoID');
+    }
 }
